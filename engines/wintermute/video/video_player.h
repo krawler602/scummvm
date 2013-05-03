@@ -41,21 +41,21 @@ namespace Wintermute {
 // AVI-Video-player, currently fully stubbed
 class VideoPlayer : public BaseClass {
 public:
-	bool _showSubtitle;
-	int32 _currentSubtitle;
+	
+	
 	bool loadSubtitles(const char *filename, const char *subtitleFile);
-	bool _slowRendering;
+	
 	bool isPlaying();
-	char *_filename;
+	
 	bool stop();
 	bool play(TVideoPlayback Type = VID_PLAY_CENTER, int x = 0, int y = 0, bool freezeMusic = true);
-	uint32 _totalVideoTime;
+	
 	uint32 _startTime;
 	//CVidRenderer *_vidRenderer;
 	//BaseSoundAVI *_sound;
-	bool _soundAvailable;
+	
 	bool setDefaults();
-	bool _playing;
+	
 	bool display();
 	bool update();
 	bool initialize(const char *inFilename, const char *subtitleFile = nullptr);
@@ -74,15 +74,25 @@ public:
 
 	LPBITMAPINFO _videoFormat;
 	PGETFRAME _videoPGF;*/
-	uint32 _videoEndTime;
+	
 
-	int32 _playPosX;
-	int32 _playPosY;
-	float _playZoom;
+	
 
 	/*  LPBITMAPV4HEADER _targetFormat;
 
 	    BaseArray<CVidSubtitle *, CVidSubtitle *> _subtitles;*/
+private:
+	bool *_showSubtitle;
+	int32 *_currentSubtitle;
+	bool *_slowRendering;
+	char *_filename;
+	uint32 *_totalVideoTime;
+	bool *_soundAvailable;
+	bool *_playing;
+	uint32 *_videoEndTime;
+	int32 *_playPosX;
+	int32 *_playPosY;
+	float *_playZoom;
 };
 
 } // end of namespace Wintermute

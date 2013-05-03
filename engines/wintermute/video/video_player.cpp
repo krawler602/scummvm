@@ -42,20 +42,20 @@ VideoPlayer::VideoPlayer(BaseGame *inGame) : BaseClass(inGame) {
 
 //////////////////////////////////////////////////////////////////////////
 bool VideoPlayer::setDefaults() {
-	_playing = false;
-	_videoEndTime = 0;
-	_soundAvailable = false;
+	*_playing = false;
+	*_videoEndTime = 0;
+	*_soundAvailable = false;
 	_startTime = 0;
-	_totalVideoTime = 0;
-	_playPosX = _playPosY = 0;
-	_playZoom = 0.0f;
+	*_totalVideoTime = 0;
+	*_playPosX = *_playPosY = 0;
+	*_playZoom = 0.0f;
 
 	_filename = nullptr;
 
-	_slowRendering = false;
+	*_slowRendering = false;
 
-	_currentSubtitle = 0;
-	_showSubtitle = false;
+	*_currentSubtitle = 0;
+	*_showSubtitle = false;
 
 	return STATUS_OK;
 }
@@ -98,7 +98,7 @@ bool VideoPlayer::stop() {
 
 //////////////////////////////////////////////////////////////////////////
 bool VideoPlayer::isPlaying() {
-	return _playing;
+	return *_playing;
 }
 
 //////////////////////////////////////////////////////////////////////////
