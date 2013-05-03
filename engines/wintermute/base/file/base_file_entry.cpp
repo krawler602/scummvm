@@ -57,11 +57,11 @@ Common::SeekableReadStream *BaseFileEntry::createReadStream() const {
 BaseFileEntry::BaseFileEntry() {
 	_package = nullptr;
 	_length = _compressedLength = _offset = _flags = 0;
-	_filename = "";
+	*_filename = "";
 
-	_timeDate1 = _timeDate2 = 0;
+	*_timeDate1 = *_timeDate2 = 0;
 
-	_journalTime = 0;
+	*_journalTime = 0;
 }
 
 

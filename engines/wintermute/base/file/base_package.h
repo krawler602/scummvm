@@ -43,6 +43,8 @@ public:
 	Common::String _name;
 	int32 _cd;
 	BasePackage();
+private:
+
 };
 
 class PackageSet : public Common::Archive {

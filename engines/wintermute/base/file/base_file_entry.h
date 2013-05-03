@@ -40,19 +40,21 @@ class BasePackage;
 class BaseFileEntry : public Common::ArchiveMember {
 public:
 	virtual Common::SeekableReadStream *createReadStream() const;
-	virtual Common::String getName() const { return _filename; }
-	uint32 _timeDate2;
-	uint32 _timeDate1;
+	virtual Common::String getName() const { return *_filename; }
+	
+	
 	uint32 _flags;
-	uint32 _journalTime;
-	Common::String _filename;
 	uint32 _compressedLength;
 	uint32 _length;
 	uint32 _offset;
 	BasePackage *_package;
 	BaseFileEntry();
 	virtual ~BaseFileEntry();
-
+private:
+	uint32 *_timeDate2;
+	uint32 *_timeDate1;
+	uint32 *_journalTime;
+	Common::String *_filename;
 };
 
 } // end of namespace Wintermute
